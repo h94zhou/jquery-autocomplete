@@ -14,8 +14,15 @@ body {
 	padding: .2em .4em;
 	margin: .8em 0 .2em;
 	line-height: 1.5;
+	color: Red;
 }
 
 .jqx-widget-content {
 	color: red;
+}
+
+.match-character {
+	font-weight: bold;
+	font-style: italic;
+	color: Blue;
 }

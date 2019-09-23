@@ -15,6 +15,16 @@
 				this._super();
 				this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
 			},
+			_renderItem: function( ul, item ) {
+				terms = this.term.split(',');
+				term = terms[terms.length-1].trim();
+				var re = new RegExp(term, 'g');
+				var t = item.label.replace(re, "<span class='match-character'>" + term + "</span>");
+				return $( "<li></li>" )
+				.data( "item.autocomplete", item )
+				.append( "<a>" + t + "</a>" )
+				.appendTo( ul );
+			},
 			_renderMenu: function( ul, items ) {
 				var that = this,
 					currentCategory = "";
